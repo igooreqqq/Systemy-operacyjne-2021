@@ -1,0 +1,37 @@
+========================================================================
+Autor: Igor Tyszer					Krakow, 02.06.2021
+========================================================================
+
+Zawartosc:
+==========
+
+Katalog zawiera program w ktorym zostalo wykonane cwiczenie 9.
+------------------------------------------------------------------------
+
+1.   W programie przy pomocy muteksow zaimplementowano zadanie wzajemnego
+     wykluczania dla watkow. Dla zademonstrowania operacji
+     na zasobie dzielonym uzyto wspolnej globalnej zmiennej licznikowej, 
+     ktorej wartosc jest zwracana przed zakonczeniem programu.
+     1) thread.c               - program glowny
+
+     
+------------------------------------------------------------------------
+
+* Jak uruchomic program:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyzszego programu, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Program glowny uruchamiamy za pomoca komendy:
+	make run9
+	
+	
+------------------------------------------------------------------------
+	
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+	make clean
+	
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+	make tar
