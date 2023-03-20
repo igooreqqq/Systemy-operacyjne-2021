@@ -1,0 +1,49 @@
+========================================================================
+Autor: Igor Tyszer					Krakow, 23.05.2021
+========================================================================
+
+Zawartosc:
+==========
+
+Katalog zawiera programy w ktorych zostalo wykonane cwiczenie 8.
+------------------------------------------------------------------------
+
+1.   W programie przy pomocy mechanizmu kolejek komunikatow zostalo 
+     zrealizowane zadanie 8 klient-serwer. Program tworzy serwer,
+     ktory oczekuje na wprowadzenie dzialania arytmetycznego w programie
+     klienta, ktore to jest przesylane do serwera, serwer oblicza
+     to dzialanie, a wynik zostaje odeslany do programu klienta, ktory
+     wyswietla wynik. Program serwera moze obsluguwac wiele programow 
+     klienta na raz.
+     1) serwer.c               - program serwera
+     2) klient.c               - program klienta
+     3) funkcje.c funkcje.h    - zawiera funkcje kolejek uzyte 
+     				   w powyzszych programach
+     4) nazwa.h                - zawiera nazwe kolejki serwera
+
+     
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyzszych programow, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Program serwera uruchamiamy za pomoca komendy:
+	make run8serwer
+	
+-> Program pierwszego klienta uruchamiamy za pomoca komendy:
+	make run8klient
+	
+-> Program drugiego klienta uruchamiamy za pomoca komendy:
+	make run8klient2
+	
+------------------------------------------------------------------------
+	
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+	make clean
+	
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+	make tar
