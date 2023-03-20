@@ -1,0 +1,36 @@
+========================================================================
+Autor: Igor Tyszer					Krakow, 30.03.2021
+========================================================================
+
+Zawartosc:
+==========
+
+Katalog zawiera program w ktorym zostalo wykonane cwiczenie 2.
+------------------------------------------------------------------------
+
+I.   Zmodyfikowany program z cwiczenia 1 wypisujacy identyfikatory UID,
+     GID, PID, PPID i PGID dla procesu macierzystego oraz wszystkich 
+     procesow potomnych z ta roznica, ze komunikaty procesow potomnych
+     wypisywane sa przez drugi program przez funkcje exec.
+     1) cw2.c   - program glowny
+     2) exec.c  - program wypisujacy procesy potomne
+     
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyzszych programow, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Aby uruchomic pierwszy program, nalezy wykonac komende:
+	make runcw2
+	
+------------------------------------------------------------------------
+	
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+	make clean
+	
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+	make tar
