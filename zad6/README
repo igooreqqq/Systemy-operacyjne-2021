@@ -1,0 +1,44 @@
+========================================================================
+Autor: Igor Tyszer					Krakow, 11.05.2021
+========================================================================
+
+Zawartosc:
+==========
+
+Katalog zawiera programy w ktorych zostalo wykonane cwiczenie 6.
+------------------------------------------------------------------------
+
+1.   W programie przy pomocy semaforow nazwanych standardu POSIX
+     zaimplementowano zadanie wzajemnego wykluczania dla procesow.
+     Program powielacz.c na poczatku tworzy plik tekstowy, umieszcza
+     w nim "0", a program wykluczanie.c w swojej sekcji krytycznej
+     odczytuje liczbe z pliku, powieksza ja o jeden a nastepnie znowu
+     zapisuje ja do pliku tekstowego. Program powielacz.c w swoim 
+     procesie potomnym wykonuje program wykluczanie.c.
+     Liczbe procesow oraz ilosc sekcji krytycznych nalezy podac przez
+     argumenty programu "powielacza". 
+     1) powielacz.c             - program glowny
+     2) wykluczanie.c           - program producenta
+     3) funkcje.c biblioteka.h  - zawiera funkcje semafora uzyte 
+     				   w powyzszych programach
+
+     
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyzszych programow, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Program uruchamiamy za pomoca komendy:
+	make run6
+	
+------------------------------------------------------------------------
+	
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+	make clean
+	
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+	make tar
