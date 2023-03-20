@@ -1,0 +1,72 @@
+========================================================================
+Autor: Igor Tyszer,                                   Krakow, 23.03.2021
+========================================================================
+
+* Zawartosc:
+============
+
+Katalog zawiera piec programow, w ktorych zostalo wykonane cwiczenie 1. 
+Zostaly one napisane w jezyku C:
+------------------------------------------------------------------------
+
+I.   Program wypisujacy identyfikatory UID, GID, PID, PPID i PGID dla
+     danego procesu.
+     Program sklada sie z jednego modulu:
+     1) a.c   - program glowny
+     
+II.  Program wypisujacy identyfikatory UID, GID, PID, PPID i PGID dla
+     procesu macierzystego oraz wszystkich procesow potomnych.
+     Program sklada sie z jednego modulu:
+     1) b.c   - program glowny
+     
+III. Program wypisujacy identyfikatory UID, GID, PID, PPID i PGID dla
+     procesu macierzystego oraz wszystkich procesow potomnych. Procesy
+     potomne sa adoptowane przez proces systemd.
+     Program sklada sie z jednego modulu:
+     1) c.c   - program glowny
+     
+IV.  Program wypisujacy identyfikatory UID, GID, PID, PPID i PGID dla
+     procesu macierzystego oraz wszystkich procesow potomnych.
+     Procesy pojawiaja sie na ekranie grupowane pokoleniami od 
+     najstarszego do najmlodszego. Proces macierzysty konczy sie
+     dopiero po procesach potomnych.
+     Program sklada sie z jednego modulu:
+     1) d.c   - program glowny
+     
+V.   Program wypisujacy identyfikatory UID, GID, PID, PPID i PGID dla
+     procesu macierzystego oraz wszystkich procesow potomnych.
+     Kazdy proces potomny jest liderem swojej wlasnej grupy procesow,
+     czyli PGID tego procesu jest rowne jego PID.
+     Program sklada sie z jednego modulu:
+     1) e.c   - program glowny
+     
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyzszych programow, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Aby uruchomic pierwszy program, nalezy wykonac komende:
+	make runA
+	
+-> Aby uruchomic drugi program, nalezy wykonac komende:
+	make runB
+	
+-> Aby uruchomic trzeci program, nalezy wykonac komende:
+	make runC
+	
+-> Aby uruchomic czwarty program, nalezy wykonac komende:
+	make runD
+	
+-> Aby uruchomic piaty program, nalezy wykonac komende:
+	make runE
+	
+	
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+	make clean
+	
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+	make tar

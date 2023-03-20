@@ -1,0 +1,35 @@
+Proces macierzysty: UID:1000, GID:1000, PID:5551, PPID:5543, PGID:5543
+1.UID:1000, GID:1000, PID:5552, PPID:5551, PGID:5543
+2.UID:1000, GID:1000, PID:5553, PPID:5551, PGID:5543
+3.UID:1000, GID:1000, PID:5554, PPID:5551, PGID:5543
+2.UID:1000, GID:1000, PID:5556, PPID:5552, PGID:5543
+3.UID:1000, GID:1000, PID:5557, PPID:5552, PGID:5543
+3.UID:1000, GID:1000, PID:5558, PPID:5553, PGID:5543
+3.UID:1000, GID:1000, PID:5559, PPID:5556, PGID:5543
+
+
+
+
+
+
+                                                              (PID,PPID,PGID)
+								(5551,5543,5543)
+								/     	|	\
+					----------------------		|	  ----------------------	
+			               /                              |                               \
+			              /                               |                                \
+			(5552,5551,5543)			(5553,5551,5543)			(5554,5551,5543)
+			/             \                               |
+		       /	       \                              |
+		      /	        \                             |
+	(5556,5552,5543)		(5557,5552,5543)	(5558,5553,5543)
+	          |
+	          |
+	          |
+	(5559,5556,5543)
+	
+	
+	
+Odpowiedz na pytanie Ile procesow powstanie przy n-krotnym wywolaniu funkcji fork i dlaczego?:
+Powstanie 2^n procesow, jeden z nich jest procesem macierzystym, a procesow potomnych jest 2^(n-1), poniewaz na poczatku mamy jeden proces, 
+ktory jest rozdwajany przez utworzony fork i w kazdej kolejnej iteracji każdy proces tworzy proces potomny.
