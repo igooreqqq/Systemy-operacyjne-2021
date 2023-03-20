@@ -1,0 +1,65 @@
+========================================================================
+Autor: Igor Tyszer					Krakow, 14.04.2021
+========================================================================
+
+Zawartosc:
+==========
+
+Katalog zawiera programy w ktorym zostalo wykonane cwiczenie 3.
+------------------------------------------------------------------------
+
+I.   Program ustawia obsluge sygnalu na 3 sposoby zgodnie z opcja podana
+     jako argument wywolania programu, a nastepnie czeka na sygnal.
+     Numer sygnalu jest rowniez przekazywany jako argument wywolania 
+     programu. Proces wypisuje na ekranie swój PID, a także swój PGID.
+     1) 3a.c   - program glowny
+     
+II.  Program, ktory w procesie potomnym uruchamia program 3a.c,
+     po czym z procesu macierzystego wysyla do niego sygnal.
+     1) 3b.c   - program glowny
+     2) 3a.c   - program uruchamiany przez program glowny
+     
+III. Program, ktory tworzy proces potomny i uruchamia w nim program 3c2.c,
+     ktory ustawia ignorowanie sygnalu, staje sie liderem swojej grupy
+     procesow, a nastepnie tworzy kilka procesow potomnych, ktore
+     uruchamiaja program 3a.c. Pierwszy proces macierzysty po krotkim
+     czasie uspienia wysyla sygnal do calej grupy procesow.
+     1) 3c.c   - program glowny
+     2) 3c2.c  - program uruchamiany przez program glowny
+     3) 3a.c   - program uruchamiany przez program 3c2.c
+     
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyzszych programow, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Aby uruchomic pierwszy program, nalezy wykonac komende:
+	make run3a opcja=x sygnal=y
+   gdzie za znak x oraz y wpisujemy nasz argument:
+   
+   Za x mozemy podstawic:
+   default    -   wykonanie operacji domyslnej
+   ignore     -   ignorowanie
+   intercept  -   przechwycenie i wlasna obsluga sygnalu
+   
+   Za y wstawiamy numer sygnalu, ktory chcemy osbluzyc.
+	
+-> Aby uruchomic drugi program, nalezy wykonac komende:
+	make run3b opcja=x sygnal=y
+   Za x i y podstawiamy to co wyzej.
+	
+-> Aby uruchomic trzeci program, nalezy wykonac komende:
+	make run3c opcja=x sygnal=y
+   Za x i y podstawiamy to co wyzej.
+	
+------------------------------------------------------------------------
+	
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+	make clean
+	
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+	make tar
