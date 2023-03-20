@@ -1,0 +1,44 @@
+========================================================================
+Autor: Igor Tyszer					Krakow, 21.04.2021
+========================================================================
+
+Zawartosc:
+==========
+
+Katalog zawiera program w ktorym zostalo wykonane cwiczenie 4.
+------------------------------------------------------------------------
+
+I.   W programie przy pomocy potokow nienazwanych zaimplementowano problem
+     "Producenta i konsumenta". Producent pobiera porcjami dane z 
+     wejsciowego pliku tekstowego i wstawia go jako towar do potoku, 
+     a konsument rowniez porcjami pobiera te dane z potoku i wstawia je 
+     do pliku wyjsciowego. Po zakonczeniu programu oba pliki tekstowe 
+     powinny byc takie same, sprawdza to polecenie diff -s wywolywane 
+     od razu po zakonczeniu sie programu.
+     1) zad4.c   - program glowny
+     
+
+     
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyzszego programu, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Aby uruchomic pierwszy program, nalezy wykonac komende:
+	make run4 arg=x arg=y
+   gdzie za znak x oraz y wpisujemy nasz argument:
+   
+   Za x podstawiamy nazwe naszego pliku wejsciowego,
+   a za y podstawiamy nazwe pliku wyjsciowego.
+	
+------------------------------------------------------------------------
+	
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+	make clean
+	
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+	make tar
