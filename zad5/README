@@ -1,0 +1,62 @@
+========================================================================
+Autor: Igor Tyszer					Krakow, 27.04.2021
+========================================================================
+
+Zawartosc:
+==========
+
+Katalog zawiera programy w ktorych zostalo wykonane cwiczenie 5.
+------------------------------------------------------------------------
+
+a)   W programie przy pomocy potokow nazwanych zaimplementowano problem
+     "Producenta i konsumenta". Producent pobiera porcjami dane z 
+     wejsciowego pliku tekstowego i wstawia go jako towar do potoku, 
+     a konsument rowniez porcjami pobiera te dane z potoku i wstawia je 
+     do pliku wyjsciowego. Po zakonczeniu programu oba pliki tekstowe 
+     powinny byc takie same, sprawdza to polecenie diff -s wywolywane 
+     od razu po zakonczeniu sie programu. Program sklada sie z programu
+     glownego, ktory uruchamia w procesach potomnych program producent.c
+     oraz konsument.c, czeka na ich zakonczenie a po ich zakonczeniu 
+     usuwa potok.
+     1) main.c        - program glowny
+     2) producent.c   - program producenta
+     3) konsument.c   - program konsumenta
+     
+
+b)   Dzialanie takie samo jak w przypadku pondpunktu a) lecz potok
+     tworzymy z poziomu powloki, tak samo program producenta i konsumenta
+     uruchamiamy z poziomu powloki, np. w dwoch osobnych oknach terminala.
+     Na koniec potok rowniez usuwamy z poziomu powloki. 
+     1) producent.c  - program producenta
+     2) konsument.c  - program konsumenta
+
+     
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyzszych programow, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+-> W podpunkcie a) korzystamy z ponizszej komendy:
+	make run5
+  
+-> W podpunkcie b) najpierw tworzymy potok komenda:
+	mkfifo fifopipe
+   pozniej w pierwszym oknie uruchamiamy proces producenta komenda:
+   	make run5b1
+   nastepnie w drugim oknie terminala uruchamiamy proces konsumenta:
+   	make run5b2
+   a na koniec usuwamy potok komenda:
+   	rm fifopipe
+ 
+	
+------------------------------------------------------------------------
+	
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+	make clean
+	
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+	make tar
